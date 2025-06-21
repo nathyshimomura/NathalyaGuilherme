@@ -7,12 +7,34 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-body {
+    * {
+      scroll-behavior: smooth;
+    }
+
+    body {
       margin: 0;
       font-family: 'Playfair Display', serif;
       background-color: #fff8f5;
       color: #333;
       text-align: center;
+    }
+
+    nav {
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 0.8rem 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      z-index: 10;
+    }
+
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #b06b77;
+      font-weight: bold;
+      font-size: 1rem;
     }
 
     header {
@@ -22,6 +44,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 60px; /* espaço por causa do menu fixo */
     }
 
     header::before {
@@ -91,20 +114,27 @@ body {
 </head>
 <body>
 
-<header>
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#presentes">Presentes</a>
+  <a href="#confirmacao">Confirmação</a>
+</nav>
+
+<header id="inicio">
   <h1>Nathalya & [Nome do Noivo]</h1>
 </header>
 
 <section>
   <h2>Nosso grande dia 💍</h2>
-  <p><strong>Data:</strong> 20 de setembro de 2025</p>
-  <p><strong>Horário:</strong> 16h</p>
-  <p><strong>Local:</strong> Espaço Garden - São Paulo</p>
+  <p><strong>Data:</strong> 27 de dezembro de 2025</p>
+  <p><strong>Horário:</strong> 14h</p>
+  <p><strong>Local:</strong> Paróquia Verbo Divino <\p>
+  <p>Rua Alexandre Dumas, 1469 - Chácara Santo Antônio (Zona Sul), São Paulo - SP</p>
 </section>
 
-<section>
+<section id="presentes">
   <h2>Lista de Presentes 🎁</h2>
-  <p>Você pode nos presentear com um Pix e deixar uma mensagem carinhosa!</p>
+  <p> Você pode nos presentear com um Pix e deixar uma mensagem carinhosa!</p>
   <img src="Fotos/qrcode_pix.png" alt="QR Code do Pix" class="qrcode">
   <p><strong>Chave Pix:</strong> seuemail@exemplo.com</p>
 
@@ -116,7 +146,7 @@ body {
   </form>
 </section>
 
-<section>
+<section id="confirmacao">
   <h2>Confirmação de Presença ✉️</h2>
   <p>Confirme sua presença no nosso casamento. Ficaremos felizes com sua companhia!</p>
 
