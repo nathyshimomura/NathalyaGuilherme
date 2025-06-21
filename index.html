@@ -2,94 +2,45 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Casamento de Nathalya & Guilherme</title>
+  <title>Nathalya & [Nome do Noivo]</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
     body {
-      font-family: 'Arial', sans-serif;
-      background: #fdf6f0;
-      color: #333;
       margin: 0;
-      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #fff8f5;
+      color: #333;
       text-align: center;
     }
+
     header {
-      background-color: #f8e1dc;
-      padding: 2rem;
+      position: relative;
+      height: 60vh;
+      background: url('Fotos/imagem_casal_site.jpeg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    h1 {
-      font-size: 2.5rem;
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    header h1 {
+      position: relative;
+      color: #6e2f44;
+      font-size: 3rem;
+      z-index: 1;
       margin: 0;
     }
-    .section {
+
+    section {
       padding: 2rem 1rem;
-    }
-    form {
-      max-width: 500px;
-      margin: auto;
-      background: #fff;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input, textarea {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-    }
-    button {
-      background: #d9857c;
-      color: white;
-      padding: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    img.qrcode {
-      width: 150px;
-      margin: 1rem 0;
-    }
-  </style>
-</head>
-<body>
 
-<header>
-  <h1>Nathalya & Guilherme</h1>
-  <p>Chegou a hora de </p>
-</header>
-
-<section class="section">
-  <h2>Informações do Casamento</h2>
-  <p>📅 Dia: 27 de dezembro de 2025</p>
-  <p>📍 Local: Espaço Garden, São Paulo</p>
-  <p>🕓 Horário: 14h00</p>
-</section>
-
-<section class="section">
-  <h2>Lista de Presentes 💝</h2>
-  <p>Você pode nos ajudar com um presente via Pix!</p>
-  <img src="SEU_QRCODE_AQUI.png" alt="QR Code Pix" class="qrcode">
-  <p>Chave Pix: <strong>seuemail@exemplo.com</strong></p>
-  <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
-    <input type="hidden" name="_subject" value="Nova mensagem com presente!">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <textarea name="mensagem" placeholder="Deixe uma mensagem aos noivos ❤️" required></textarea>
-    <button type="submit">Enviar mensagem</button>
-  </form>
-</section>
-
-<section class="section">
-  <h2>Confirme sua Presença 🎉</h2>
-  <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
-    <input type="hidden" name="_subject" value="Confirmação de presença">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="email" name="email" placeholder="Seu e-mail" required>
-    <input type="number" name="quantidade" placeholder="Quantas pessoas?" required>
-    <button type="submit">Confirmar Presença</button>
-  </form>
-</section>
-
-</body>
-</html>
