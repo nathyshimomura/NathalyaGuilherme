@@ -17,6 +17,7 @@
       background-color: #fff8f5;
       color: #333;
       text-align: center;
+      padding-top: 60px; /* Espaço para o menu fixo */
     }
 
     nav {
@@ -35,6 +36,10 @@
       color: #b06b77;
       font-weight: bold;
       font-size: 1rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #6e2f44;
     }
 
     header {
@@ -61,6 +66,13 @@
       font-size: 3rem;
       z-index: 1;
       margin: 0;
+    }
+
+    #contador {
+      font-size: 1.3rem;
+      margin: 1.5rem 0 0.5rem 0;
+      color: #b06b77;
+      font-weight: bold;
     }
 
     section {
@@ -93,6 +105,7 @@
       border-radius: 5px;
       border: 1px solid #ccc;
       font-family: inherit;
+      font-size: 1rem;
     }
 
     button {
@@ -103,17 +116,89 @@
       border-radius: 6px;
       cursor: pointer;
       font-size: 1rem;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background: #6e2f44;
     }
 
     img.qrcode {
       width: 160px;
       margin: 1rem 0;
     }
+
+    /* Botão voltar ao topo */
+    .btn-topo {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #b06b77;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      text-decoration: none;
+      z-index: 99;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: background 0.2s;
+    }
+    .btn-topo:hover {
+      background: #6e2f44;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      header {
+        height: 35vh;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      nav a {
+        font-size: 0.95rem;
+        margin: 0 0.5rem;
+      }
+      section {
+        padding: 1rem 0.2rem;
+      }
+      img.qrcode, section img {
+        width: 90vw !important;
+        max-width: 300px;
+      }
+      .btn-topo {
+        bottom: 15px;
+        right: 15px;
+        font-size: 1.2rem;
+        padding: 8px 11px;
+      }
+    }
   </style>
 </head>
 <body>
 
-
+<!-- Contador regressivo -->
+<div id="contador"></div>
+<script>
+  const dataCasamento = new Date('2025-12-27T14:00:00');
+  const contador = document.getElementById('contador');
+  function atualizaContador() {
+    const agora = new Date();
+    const diff = dataCasamento - agora;
+    if(diff <= 0) {
+      contador.innerHTML = "É hoje! 💍";
+      return;
+    }
+    const dias = Math.floor(diff / (1000*60*60*24));
+    const horas = Math.floor((diff / (1000*60*60)) % 24);
+    const minutos = Math.floor((diff / (1000*60)) % 60);
+    contador.innerHTML = `Faltam ${dias} dias, ${horas} horas e ${minutos} minutos para o grande dia!`;
+  }
+  setInterval(atualizaContador, 1000);
+  atualizaContador();
+</script>
 
 <header id="inicio">
   <h1>Nathalya & Guilherme</h1>
@@ -126,26 +211,26 @@
 </nav>
 
 <section>
-  <h2>XXXXXXXXX</h2>
+  <h2>Cerimônia Religiosa</h2>
   <p><strong>Data:</strong> 27 de dezembro de 2025</p>
   <p><strong>Horário:</strong> 14h</p>
-  <p><strong>Local:</strong> Paróquia Verbo Divino<\p>
+  <p><strong>Local:</strong> Paróquia Verbo Divino</p>
   <p>Rua Alexandre Dumas, 1469 - Chácara Santo Antônio (Zona Sul), São Paulo - SP</p>
-  <a href = https://www.google.com/maps/place/Par%C3%B3quia+Verbo+Divino/@-23.6316551,-46.8493952,12z/data=!4m10!1m2!2m1!1sparoquia+verbo+Divino!3m6!1s0x94ce50e0dab634e3:0x34eb43114fe9b8d5!8m2!3d-23.6316551!4d-46.7051996!15sChVwYXJvcXVpYSB2ZXJibyBEaXZpbm-SAQ9jYXRob2xpY19jaHVyY2iqAVgQASoZIhVwYXJvcXVpYSB2ZXJibyBkaXZpbm8oDDIeEAEiGrRLDzUQt0rE7qWuOMxF-hgKpctGmk1VDqbQMhkQAiIVcGFyb3F1aWEgdmVyYm8gZGl2aW5v4AEA!16s%2Fg%2F1ttpcf0b?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D>
-  	<img src="Fotos/map.png">
-  <\a>
+  <a href="https://www.google.com/maps/place/Par%C3%B3quia+Verbo+Divino/@-23.6316551,-46.8493952,12z/data=!4m10!1m2!2m1!1sparoquia+verbo+Divino!3m6!1s0x94ce50e0dab634e3:0x34eb43114fe9b8d5!8m2!3d-23.6316551!4d-46.7051996!15sChVwYXJvcXVpYSB2ZXJibyBEaXZpbm-SAQ9jYXRob2xpY19jaHVyY2iqAVgQASoZIhVwYXJvcXVpYSB2ZXJibyBkaXZpbm8oDDIeEAEiGrRLDzUQt0rE7qWuOMxF-hgKpctGmk1VDqbQMhkQAiIVcGFyb3F1aWEgdmVyYm8gZGl2aW5v4AEA!16s%2Fg%2F1ttpcf0b?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+    <img src="Fotos/map.png" alt="Mapa do local da cerimônia" style="width: 300px; height: auto;">
+  </a>
 </section>
 
 <section id="presentes">
-  <h2>Lista de Presentes 🎁</h2>
-  <p> Você pode nos presentear com um Pix e deixar uma mensagem carinhosa!</p>
-  <img src="Fotos/qrcode_pix.png" alt="QR Code do Pix" class="qrcode">
+  <h2>Lista de Presentes 🏱</h2>
+  <p>Você pode nos presentear com um Pix e deixar uma mensagem carinhosa!</p>
+  <img src="Fotos/qrcode_pix.png" alt="QR Code do Pix dos noivos" class="qrcode">
   <p><strong>Chave Pix:</strong> seuemail@exemplo.com</p>
 
   <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
     <input type="hidden" name="_subject" value="Nova mensagem com presente!">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <textarea name="mensagem" placeholder="Escreva sua mensagem aos noivos 💌" required></textarea>
+    <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
+    <textarea name="mensagem" placeholder="Escreva sua mensagem aos noivos 💌" required autocomplete="off"></textarea>
     <button type="submit">Enviar mensagem</button>
   </form>
 </section>
@@ -154,14 +239,19 @@
   <h2>Confirmação de Presença ✉️</h2>
   <p>Confirme sua presença no nosso casamento. Ficaremos felizes com sua companhia!</p>
 
-  <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
+  <form action="https://formsubmit.co/nathalyaito@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="Confirmação de presença">
-    <input type="text" name="nome" placeholder="Seu nome" required>
-    <input type="email" name="email" placeholder="Seu e-mail" required>
-    <input type="number" name="quantidade" placeholder="Quantas pessoas?" required>
+    <input type="hidden" name="_next" value="https://nathyshimomura.github.io/obrigado.html">
+    <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
+    <input type="email" name="email" placeholder="Seu e-mail" required autocomplete="email">
+    <input type="number" name="quantidade" placeholder="Quantas pessoas?" required autocomplete="off" min="1">
+    <textarea name="nomes_acompanhantes" placeholder="Nome(s) dos acompanhantes (opcional)" autocomplete="off"></textarea>
     <button type="submit">Confirmar presença</button>
   </form>
 </section>
+
+<!-- Botão voltar ao topo -->
+<a href="#inicio" class="btn-topo" title="Voltar ao topo">↑</a>
 
 </body>
 </html>
