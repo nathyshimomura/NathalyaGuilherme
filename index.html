@@ -179,26 +179,6 @@
 </head>
 <body>
 
-<!-- Contador regressivo -->
-<div id="contador"></div>
-<script>
-  const dataCasamento = new Date('2025-12-27T14:00:00');
-  const contador = document.getElementById('contador');
-  function atualizaContador() {
-    const agora = new Date();
-    const diff = dataCasamento - agora;
-    if(diff <= 0) {
-      contador.innerHTML = "É hoje! 💍";
-      return;
-    }
-    const dias = Math.floor(diff / (1000*60*60*24));
-    const horas = Math.floor((diff / (1000*60*60)) % 24);
-    const minutos = Math.floor((diff / (1000*60)) % 60);
-    contador.innerHTML = `Faltam ${dias} dias, ${horas} horas e ${minutos} minutos para o grande dia!`;
-  }
-  setInterval(atualizaContador, 1000);
-  atualizaContador();
-</script>
 
 <header id="inicio">
   <h1>Nathalya & Guilherme</h1>
@@ -234,6 +214,28 @@
     <button type="submit">Enviar mensagem</button>
   </form>
 </section>
+
+  
+  <!-- Contador regressivo -->
+<div id="contador"></div>
+<script>
+  const dataCasamento = new Date('2025-12-27T14:00:00');
+  const contador = document.getElementById('contador');
+  function atualizaContador() {
+    const agora = new Date();
+    const diff = dataCasamento - agora;
+    if(diff <= 0) {
+      contador.innerHTML = "É hoje! 💍";
+      return;
+    }
+    const dias = Math.floor(diff / (1000*60*60*24));
+    const horas = Math.floor((diff / (1000*60*60)) % 24);
+    const minutos = Math.floor((diff / (1000*60)) % 60);
+    contador.innerHTML = `Faltam ${dias} dias, ${horas} horas e ${minutos} minutos para o grande dia!`;
+  }
+  setInterval(atualizaContador, 1000);
+  atualizaContador();
+</script>
 
 <section id="confirmacao">
   <h2>Confirmação de Presença ✉️</h2>
