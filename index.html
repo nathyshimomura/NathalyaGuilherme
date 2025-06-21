@@ -2,12 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Nathalya & [Nome do Noivo]</title>
+  <title>Nathalya & Guilherme</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-    body {
+body {
       margin: 0;
       font-family: 'Playfair Display', serif;
       background-color: #fff8f5;
@@ -43,4 +43,91 @@
 
     section {
       padding: 2rem 1rem;
+      max-width: 700px;
+      margin: auto;
+    }
 
+    h2 {
+      color: #b06b77;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    form {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-top: 1rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    button {
+      background: #b06b77;
+      color: white;
+      padding: 0.8rem 1.2rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    img.qrcode {
+      width: 160px;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Nathalya & [Nome do Noivo]</h1>
+</header>
+
+<section>
+  <h2>Nosso grande dia 💍</h2>
+  <p><strong>Data:</strong> 20 de setembro de 2025</p>
+  <p><strong>Horário:</strong> 16h</p>
+  <p><strong>Local:</strong> Espaço Garden - São Paulo</p>
+</section>
+
+<section>
+  <h2>Lista de Presentes 🎁</h2>
+  <p>Você pode nos presentear com um Pix e deixar uma mensagem carinhosa!</p>
+  <img src="Fotos/qrcode_pix.png" alt="QR Code do Pix" class="qrcode">
+  <p><strong>Chave Pix:</strong> seuemail@exemplo.com</p>
+
+  <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
+    <input type="hidden" name="_subject" value="Nova mensagem com presente!">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <textarea name="mensagem" placeholder="Escreva sua mensagem aos noivos 💌" required></textarea>
+    <button type="submit">Enviar mensagem</button>
+  </form>
+</section>
+
+<section>
+  <h2>Confirmação de Presença ✉️</h2>
+  <p>Confirme sua presença no nosso casamento. Ficaremos felizes com sua companhia!</p>
+
+  <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
+    <input type="hidden" name="_subject" value="Confirmação de presença">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <input type="number" name="quantidade" placeholder="Quantas pessoas?" required>
+    <button type="submit">Confirmar presença</button>
+  </form>
+</section>
+
+</body>
+</html>
