@@ -223,27 +223,6 @@
   </a>
 </section>
 
-<section id="pix">
-  <h2>Presente via Pix 💖</h2>
-  <p>
-    Sua presença é o nosso maior presente!<br>
-    Mas, se quiser nos ajudar de forma especial, você pode nos presentear via Pix.<br>
-    <strong>Chave Pix:</strong> seuemail@exemplo.com
-  </p>
-  <img src="Fotos/qrcode_pix.png" alt="QR Code do Pix dos noivos" class="qrcode">
-  <p>
-    <strong>Dica:</strong> Escreva uma mensagem carinhosa para a gente no campo abaixo!<br>
-    Se quiser, copie sua mensagem e cole no campo "Mensagem" do Pix ao transferir.<br>
-    Assim, sua mensagem vai junto com o presente!
-  </p>
-  <form action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
-    <input type="hidden" name="_subject" value="Mensagem de presente via Pix">
-    <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
-    <textarea name="mensagem" placeholder="Escreva sua mensagem aos noivos 💌" required autocomplete="off"></textarea>
-    <button type="submit">Enviar mensagem</button>
-  </form>
-</section>
-
 <section id="confirmacao">
   <h2>Confirmação de Presença ✉️</h2>
   <p>Confirme sua presença no nosso casamento. Ficaremos felizes com sua companhia!</p>
@@ -257,6 +236,59 @@
     <button type="submit">Confirmar presença</button>
   </form>
 </section>
+  
+
+<section id="pix">
+  <h2>Presente para os noivos 💖</h2>
+  <p>
+    Sua presença é o nosso maior presente!<br>
+    Mas se quiser nos presentear mais, envie uma mensagem carinhosa e, ao final, você receberá podera nos enviar um pix.
+  </p>
+  <form id="pixForm" action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
+    <input type="hidden" name="_subject" value="Mensagem de presente via Pix">
+    <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
+    <textarea name="mensagem" placeholder="Escreva sua mensagem aos noivos 💌" required autocomplete="off"></textarea>
+    <button type="submit">Enviar mensagem</button>
+  </form>
+</section>
+
+<!-- Modal do QR Code -->
+<div id="pixModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:999; align-items:center; justify-content:center;">
+  <div style="background:#fff; padding:2rem 1.5rem; border-radius:12px; max-width:90vw; max-height:90vh; text-align:center; position:relative;">
+    <button onclick="fecharModal()" style="position:absolute; top:8px; right:15px; font-size:1.4rem; background:none; border:none; color:#b06b77; cursor:pointer;">×</button>
+    <h3>Obrigado pela mensagem! 💖</h3>
+    <p>Agora é só escanear o QR Code abaixo para fazer seu Pix:</p>
+    <img src="Fotos/qrcode_pix.png" alt="QR Code do Pix dos noivos" style="width:180px; margin:1rem auto;">
+    <p><strong>Chave Pix:</strong> seuemail@exemplo.com</p>
+    <p style="font-size:0.9rem; color:#888;">Se quiser, copie sua mensagem para o campo "mensagem" do Pix no app do banco.</p>
+    <button onclick="enviarFormulario()" style="margin-top:1.5rem; background:#b06b77; color:#fff; border:none; border-radius:6px; padding:0.7rem 1.5rem; font-size:1rem; cursor:pointer;">Finalizar</button>
+  </div>
+</div>
+
+<script>
+  // Ao enviar o formulário, mostra o modal e impede envio imediato
+  let formularioEnviado = false;
+  document.getElementById('pixForm').addEventListener('submit', function(e){
+    if(!formularioEnviado) {
+      e.preventDefault();
+      document.getElementById('pixModal').style.display = 'flex';
+    }
+  });
+
+  // Botão para fechar modal (caso queira dar essa opção)
+  function fecharModal() {
+    document.getElementById('pixModal').style.display = 'none';
+  }
+
+  // Botão "Finalizar" envia o formulário de verdade
+  function enviarFormulario() {
+    formularioEnviado = true;
+    document.getElementById('pixForm').submit();
+  }
+</script>
+
+
+
 
 <!-- Botão voltar ao topo -->
 <a href="#inicio" class="btn-topo" title="Voltar ao topo">↑</a>
