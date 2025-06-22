@@ -33,7 +33,7 @@
     .topo-foto {
       display: block;
       width: 100%;
-      max-width: 600px; /* ou o valor que preferir */
+      max-width: 700px; /* ou o valor que preferir */
       height: auto;
       object-fit: cover; /* Garante que a imagem preencha sem distorcer */
       margin: 65px auto 0 auto; /* Centraliza e respeita o menu fixo */
@@ -128,6 +128,9 @@
     .texto-menor {
       font-size: 0.9rem;
     }
+    .texto-menor2 {
+      font-size: 0.7rem;
+    }
 
     /* Botão voltar ao topo */
     .btn-topo {
@@ -153,16 +156,19 @@
      @media (max-width: 600px) {
     .topo-foto {
       width: 95vw;
-      max-width: 320px;
+      max-width: 700px;
       height: auto;
       margin-top: 65px;
       }
     
       .nomes-noivos {
-        font-size: 1.5rem;
+        font-size: 1.0rem;
       }
       h2 {
         font-size: 1.3rem;
+      }
+      h3 {
+        font-size: 1.0rem;
       }
       nav a {
         font-size: 0.95rem;
@@ -210,6 +216,19 @@
   Nathalya & Guilherme
 </div>
 
+
+<section>
+  <h3>Cerimônia Religiosa</h3>
+  <p><strong>Data:</strong> 27 de dezembro de 2025</p>
+  <p><strong>Horário:</strong> 14h</p>
+  <p><strong>Local:</strong> Paróquia Verbo Divino</p>
+  <p>Rua Alexandre Dumas, 1469 - Chácara Santo Antônio (Zona Sul), São Paulo - SP</p>
+  <a href="https://www.google.com/maps/place/Par%C3%B3quia+Verbo+Divino/@-23.6316551,-46.8493952,12z/data=!4m10!1m2!2m1!1sparoquia+verbo+Divino!3m6!1s0x94ce50e0dab634e3:0x34eb43114fe9b8d5!8m2!3d-23.6316551!4d-46.7051996!15sChVwYXJvcXVpYSB2ZXJibyBEaXZpbm-SAQ9jYXRob2xpY19jaHVyY2iqAVgQASoZIhVwYXJvcXVpYSB2ZXJibyBkaXZpbm8oDDIeEAEiGrRLDzUQt0rE7qWuOMxF-hgKpctGmk1VDqbQMhkQAiIVcGFyb3F1aWEgdmVyYm8gZGl2aW5v4AEA!16s%2Fg%2F1ttpcf0b?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+    <img src="Fotos/map.png" alt="Mapa do local da cerimônia" style="width: 30px; height: auto;">
+  </a>
+  <p class="texto-menor2">Mapa do local</p>
+</section>
+
 <!-- Contador regressivo -->
 <div id="contador"></div>
 <script>
@@ -230,19 +249,7 @@
   setInterval(atualizaContador, 1000);
   atualizaContador();
 </script>
-
-<section>
-  <h2>Cerimônia Religiosa</h2>
-  <p><strong>Data:</strong> 27 de dezembro de 2025</p>
-  <p><strong>Horário:</strong> 14h</p>
-  <p><strong>Local:</strong> Paróquia Verbo Divino</p>
-  <p>Rua Alexandre Dumas, 1469 - Chácara Santo Antônio (Zona Sul), São Paulo - SP</p>
-  <a href="https://www.google.com/maps/place/Par%C3%B3quia+Verbo+Divino/@-23.6316551,-46.8493952,12z/data=!4m10!1m2!2m1!1sparoquia+verbo+Divino!3m6!1s0x94ce50e0dab634e3:0x34eb43114fe9b8d5!8m2!3d-23.6316551!4d-46.7051996!15sChVwYXJvcXVpYSB2ZXJibyBEaXZpbm-SAQ9jYXRob2xpY19jaHVyY2iqAVgQASoZIhVwYXJvcXVpYSB2ZXJibyBkaXZpbm8oDDIeEAEiGrRLDzUQt0rE7qWuOMxF-hgKpctGmk1VDqbQMhkQAiIVcGFyb3F1aWEgdmVyYm8gZGl2aW5v4AEA!16s%2Fg%2F1ttpcf0b?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-    <img src="Fotos/map.png" alt="Mapa do local da cerimônia" style="width: 20px; height: auto;">
-    <p class="texto-menor">Mapa do local</p>
-  </a>
-</section>
-
+  
 <section id="Confirmacao">
   <h2>Confirmação de Presença ✉️</h2>
   <p>Confirme sua presença no nosso casamento. Ficaremos felizes com sua companhia!</p>
