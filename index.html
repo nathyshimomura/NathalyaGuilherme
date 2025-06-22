@@ -19,24 +19,19 @@
       text-align: center;
     }
 
-    .topo-foto {
-      width: 100%;
-      height: 45vh;
-      min-height: 220px;
-      max-height: 400px;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
-
     nav {
       background-color: #fff;
       width: 100%;
       padding: 0.8rem 1rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      z-index: 10;
-      position: relative;
+      z-index: 9999;
+      position: fixed;
+      top: 0;
+      left: 0;
       margin-bottom: 0;
+    }
+    .topo-foto {
+      margin-top: 65px; /* Ajuste para a altura do menu */
     }
 
     nav a {
@@ -140,6 +135,7 @@
     .btn-topo:hover {
       background: #6e2f44;
     }
+    
 
     /* Responsividade */
     @media (max-width: 600px) {
@@ -158,7 +154,12 @@
         margin: 0 0.5rem;
       }
       section {
-        padding: 1rem 0.2rem;
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 12px rgba(176, 107, 119, 0.07);
+        margin: 2.5rem auto;
+        padding: 2.5rem 1.5rem;
+        max-width: 700px;
       }
       img.qrcode, section img {
         width: 90vw !important;
@@ -175,15 +176,17 @@
 </head>
 <body>
 
+<!-- Menu fixo no topo da pagina -->
+<nav>
+  <a href="#Inicio">Início</a>
+  <a href="#Confirmacao">Confirmação</a>
+  <a href="#Presente">Presente</a>
+  <a href="#GaleriaFotos">GAleria de Fotos</a>
+  <a href="#BatizadoHanna">BatizadoHanna</a>
+</nav>
+
 <!-- Foto do casal no topo -->
 <img src="Fotos/imagem_casal_site.jpeg" alt="Foto do casal" class="topo-foto">
-
-<!-- Menu logo abaixo da foto -->
-<nav>
-  <a href="#inicio">Início</a>
-  <a href="#pix">Pix</a>
-  <a href="#confirmacao">Confirmação</a>
-</nav>
 
 <!-- Nome dos noivos logo abaixo do menu -->
 <div class="nomes-noivos" id="inicio">
@@ -218,7 +221,7 @@
   <p><strong>Local:</strong> Paróquia Verbo Divino</p>
   <p>Rua Alexandre Dumas, 1469 - Chácara Santo Antônio (Zona Sul), São Paulo - SP</p>
   <a href="https://www.google.com/maps/place/Par%C3%B3quia+Verbo+Divino/@-23.6316551,-46.8493952,12z/data=!4m10!1m2!2m1!1sparoquia+verbo+Divino!3m6!1s0x94ce50e0dab634e3:0x34eb43114fe9b8d5!8m2!3d-23.6316551!4d-46.7051996!15sChVwYXJvcXVpYSB2ZXJibyBEaXZpbm-SAQ9jYXRob2xpY19jaHVyY2iqAVgQASoZIhVwYXJvcXVpYSB2ZXJibyBkaXZpbm8oDDIeEAEiGrRLDzUQt0rE7qWuOMxF-hgKpctGmk1VDqbQMhkQAiIVcGFyb3F1aWEgdmVyYm8gZGl2aW5v4AEA!16s%2Fg%2F1ttpcf0b?entry=ttu&g_ep=EgoyMDI1MDYxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-    <img src="Fotos/map.png" alt="Mapa do local da cerimônia" style="width: 30px; height: auto;">
+    <img src="Fotos/map.png" alt="Mapa do local da cerimônia" style="width: 20px; height: auto;">
     <p class="texto-menor">Mapa do local</p>
   </a>
 </section>
