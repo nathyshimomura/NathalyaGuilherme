@@ -31,7 +31,14 @@
       margin-bottom: 0;
     }
     .topo-foto {
-      margin-top: 65px; /* Ajuste para a altura do menu */
+      display: block;
+      width: 100%;
+      max-width: 600px; /* ou o valor que preferir */
+      height: auto;
+      object-fit: cover; /* Garante que a imagem preencha sem distorcer */
+      margin: 65px auto 0 auto; /* Centraliza e respeita o menu fixo */
+      border-radius: 18px; /* Opcional: deixa as bordas arredondadas */
+      box-shadow: 0 2px 12px rgba(176, 107, 119, 0.11); /* Opcional: sombra suave */
     }
 
     nav a {
@@ -138,11 +145,14 @@
     
 
     /* Responsividade */
-    @media (max-width: 600px) {
-      .topo-foto {
-        height: 28vh;
-        min-height: 120px;
+     @media (max-width: 600px) {
+    .topo-foto {
+      width: 95vw;
+      max-width: 320px;
+      height: auto;
+      margin-top: 65px;
       }
+    
       .nomes-noivos {
         font-size: 1.5rem;
       }
@@ -175,14 +185,16 @@
   </style>
 </head>
 <body>
-
+  
+<div id="Inicio"></div>
+  
 <!-- Menu fixo no topo da pagina -->
 <nav>
   <a href="#Inicio">Início</a>
   <a href="#Confirmacao">Confirmação</a>
   <a href="#Presente">Presente</a>
-  <a href="#GaleriaFotos">GAleria de Fotos</a>
-  <a href="#BatizadoHanna">BatizadoHanna</a>
+  <a href="#GaleriaFotos">Galeria de Fotos</a>
+  <a href="#BatizadoHanna">Batizado Hanna</a>
 </nav>
 
 <!-- Foto do casal no topo -->
@@ -226,7 +238,7 @@
   </a>
 </section>
 
-<section id="confirmacao">
+<section id="Confirmacao">
   <h2>Confirmação de Presença ✉️</h2>
   <p>Confirme sua presença no nosso casamento. Ficaremos felizes com sua companhia!</p>
   <form action="https://formsubmit.co/nathalyaito@gmail.com" method="POST">
@@ -241,13 +253,13 @@
 </section>
   
 
-<section id="pix">
+<section id="Presente">
   <h2>Presente para os noivos 💖</h2>
   <p>
     Sua presença é o nosso maior presente!<br>
     Mas se quiser nos presentear mais, envie uma mensagem carinhosa e, ao final, você receberá podera nos enviar um pix.
   </p>
-  <form id="pixForm" action="https://formsubmit.co/seuemail@exemplo.com" method="POST">
+  <form id="pixForm" action="https://formsubmit.co/nathalyaito@gmail.com.com" method="POST">
     <input type="hidden" name="_subject" value="Mensagem de presente via Pix">
     <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
     <textarea name="mensagem" placeholder="Escreva sua mensagem aos noivos 💌" required autocomplete="off"></textarea>
