@@ -245,7 +245,6 @@
   <a href="#Inicio">Início</a>
   <a href="#Confirmacao">Confirmação</a>
   <a href="#Presente">Presente</a>
-  <a href="#BatizadoHanna">Batizado Hanna</a>
 </nav>
 
 <!-- Foto do casal no topo -->
@@ -340,38 +339,37 @@
   </div>
 </div>
 
+  
 <script>
   let formularioEnviado = false;
 
-  // Quando o formulário for enviado...
   document.getElementById('pixForm').addEventListener('submit', function(e) {
     if (!formularioEnviado) {
-      e.preventDefault();                   // Impede o envio padrão
-      document.getElementById('pixModal').style.display = 'flex'; // Abre o modal
+      e.preventDefault(); // evita envio automático
+      document.getElementById('pixModal').style.display = 'flex'; // mostra o popup
     }
   });
 
-  // Função para fechar modal (botão "×")
   function fecharModal() {
     document.getElementById('pixModal').style.display = 'none';
   }
 
-  // Botão "Finalizar" envia o formulário de verdade
   function enviarFormulario() {
-    formularioEnviado = true;
-    document.getElementById('pixForm').submit();
+    formularioEnviado = true;        // sinaliza envio autorizado
+    document.getElementById('pixForm').submit();  // envia formulário
   }
 
-  // Função para copiar chave Pix ao clicar no botão
+  // Copiar chave Pix
   document.getElementById('btn-copiar').addEventListener('click', function() {
     const chavePix = '60a3201b-85cb-4153-a724-f8b029934153';
-    navigator.clipboard.writeText(chavePix).then(function() {
+    navigator.clipboard.writeText(chavePix).then(() => {
       const msg = document.getElementById('copiado-msg');
       msg.style.display = 'inline';
-      setTimeout(() => msg.style.display = 'none', 1700);
+      setTimeout(() => { msg.style.display = 'none'; }, 1700);
     });
   });
 </script>
+
 
 
 
@@ -384,6 +382,7 @@
 
 </body>
 </html>
+
 
 
 
