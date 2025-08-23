@@ -309,58 +309,43 @@
   <h2>Presente para os noivos 💖</h2>
   <p>
     Sua presença é o nosso maior presente!<br>
-    Mas se quiser nos presentear com mais, envie uma mensagem carinhosa e, ao final, você poderá nos presentear com um Pix.
+    Mas se quiser nos presentear com mais, segue nossa chave pix. 
+    Aproveite também para nos presentear com uma mensagem carinhosa de felicitação.
   </p>
+
+  <!-- QR Code do Pix -->
+  <img src="Fotos/qrcode_pix.png" alt="QR Code para Pix dos noivos" class="qrcode" style="max-width: 200px; margin-bottom: 1rem;">
+
+  <!-- Chave Pix com botão para copiar -->
+  <p>
+  <strong>Chave Pix:</strong> <span id="chave-pix-text">60a3201b-85cb-4153-a724-f8b029934153</span>
+  <button id="btn-copiar" title="Copiar chave Pix" style="
+    background: none; border: none; cursor: pointer;
+    vertical-align: middle; margin-left: 8px; color:#b06b77; display: inline-flex; align-items: center; gap: 4px; font-size: 1rem;">
+    <!-- Ícone de copiar: dois papéis deslocados -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#b06b77" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+      </svg>
+      Copiar
+    </button>
+    <span id="copiado-msg" style="font-size:0.9rem; color:#44b06b; margin-left: 8px; display: none;">Copiado!</span>
+  </p>
+
+
+  <!-- Formulário para mensagem -->
   <form id="pixForm" action="https://formsubmit.co/nathalyaito@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="Mensagem de presente via Pix">
     <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
-    <textarea name="mensagem" placeholder="Escreva sua mensagem aos noivos 💌" required autocomplete="off"></textarea>
+    <textarea name="mensagem" placeholder="Escreva sua mensagem carinhosa aos noivos 💌" required autocomplete="off"></textarea>
     <button type="submit">Enviar mensagem</button>
   </form>
 </section>
 
-<!-- Modal do QR Code do Pix -->
-<div id="pixModal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:999; display:flex; align-items:center; justify-content:center;">
-  <div style="background:#fff; padding:2rem 1.5rem; border-radius:12px; max-width:90vw; max-height:90vh; text-align:center; position:relative;">
-    <button onclick="fecharModal()" style="position:absolute; top:8px; right:15px; font-size:1.4rem; background:none; border:none; color:#b06b77; cursor:pointer;">×</button>
-    <h3>Obrigado pela mensagem! 💖</h3>
-    <p>Agora é só escanear o QR Code abaixo para fazer seu Pix:</p>
-    <img src="Fotos/pixGui.png" alt="QR Code do Pix dos noivos" style="width:180px; margin:1rem auto;">
-    <p>
-      <strong>Chave Pix:</strong> 60a3201b-85cb-4153-a724-f8b029934153
-      <button id="btn-copiar" style="
-      background: none; border: none; cursor: pointer;
-      font-size: 1.2rem; vertical-align: middle; margin-left: 10px; color:#b06b77;
-      " title="Copiar chave Pix">📋</button>
-      <span id="copiado-msg" style="font-size:0.95rem; color:#44b06b; margin-left:8px; display:none;">Copiado!</span>
-    </p>
-    <button onclick="enviarFormulario()" style="margin-top:1.5rem; background:#b06b77; color:#fff; border:none; border-radius:6px; padding:0.7rem 1.5rem; font-size:1rem; cursor:pointer;">Finalizar</button>
-  </div>
-</div>
-
-  
 <script>
-  let formularioEnviado = false;
-
-  document.getElementById('pixForm').addEventListener('submit', function(e) {
-    if (!formularioEnviado) {
-      e.preventDefault(); // evita envio automático
-      document.getElementById('pixModal').style.display = 'flex'; // mostra o popup
-    }
-  });
-
-  function fecharModal() {
-    document.getElementById('pixModal').style.display = 'none';
-  }
-
-  function enviarFormulario() {
-    formularioEnviado = true;        // sinaliza envio autorizado
-    document.getElementById('pixForm').submit();  // envia formulário
-  }
-
-  // Copiar chave Pix
+  // Copiar chave Pix ao clicar no botão
   document.getElementById('btn-copiar').addEventListener('click', function() {
-    const chavePix = '60a3201b-85cb-4153-a724-f8b029934153';
+    const chavePix = document.getElementById('chave-pix-text').textContent.trim();
     navigator.clipboard.writeText(chavePix).then(() => {
       const msg = document.getElementById('copiado-msg');
       msg.style.display = 'inline';
@@ -376,11 +361,13 @@
 
 
 
+
 <!-- Botão voltar ao topo -->
 <a href="#Inicio" class="btn-topo" title="Voltar ao topo">↑</a>
 
 </body>
 </html>
+
 
 
 
