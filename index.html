@@ -151,8 +151,9 @@
       background: #6e2f44;
     }
     .icone-mapa {
-      width: 40px;   /* tamanho padrão no desktop */
-      height: 40px;
+    width: 40px;    /* largura fixa */
+    height: auto;   /* altura automática para manter proporção */
+    max-height: 40px; /* opcional, para limitar a altura */
     }
     
 
@@ -197,8 +198,9 @@
         padding: 8px 11px;
       }
       .icone-mapa {
-        width: 28px;  /* tamanho menor no celular */
-        height: 28px;
+      width: 28px;    /* largura menor para celular */
+      height: auto;   /* mantém proporção */
+      max-height: 28px;
       }
     }
   </style>
@@ -385,6 +387,7 @@
 
 </body>
 </html>
+
 
 
 
