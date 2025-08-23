@@ -40,6 +40,13 @@
       border-radius: 18px; /* Opcional: deixa as bordas arredondadas */
       box-shadow: 0 2px 12px rgba(176, 107, 119, 0.11); /* Opcional: sombra suave */
     }
+    .foto-hannah {
+    width: 250px;  
+    height: 100%;    
+    object-fit: cover; /* mantém proporção cortando se necessário */
+    border: 1px solid rgba(176, 107, 119, 0.15); /* borda sutil */
+    border-radius: 6px; /* opcional: cantos arredondados */
+    }
 
     nav a {
       margin: 0 1rem;
@@ -202,6 +209,10 @@
       width: 10px;    /* largura menor para celular */
       height: auto;   /* mantém proporção */
       }
+      .foto-hannah {
+      width: 100px;    /* largura menor para celular */
+      height: auto;   /* mantém proporção */
+      }
     }
   </style>
 </head>
@@ -265,13 +276,7 @@
   <p>Dia 27 de dezembro de 2025 será nosso casamento religioso. Estamos muito animados e gostaríamos de te convidar para compartilhar esse momento conosco.</p>
   <p>E para deixar esse dia ainda mais especial, também iremos batizar nossa querida afilhada, Hannah.</p>
   <div style="text-align: center; margin-top: 1rem;">
-  <img src="Fotos/foto_hannah3.JPG" alt="Foto Hanna" style="
-    width: 250px;      /* tamanho mediano */
-    height: 260px;     /* quadrada */
-    object-fit: cover; /* mantém proporção cortando se necessário */
-    border: 1px solid rgba(176, 107, 119, 0.15); /* borda sutil */
-    border-radius: 6px; /* opcional: cantos arredondados */
-  ">
+  <img src="Fotos/foto_hannah3.JPG" alt="Foto Hanna"  class="foto-hannah">
   </div>
 
   <br>
@@ -387,6 +392,7 @@
 
 </body>
 </html>
+
 
 
 
