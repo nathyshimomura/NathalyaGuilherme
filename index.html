@@ -208,7 +208,8 @@
 
 <script>
   // Checa se veio do formulário de confirmação
-  if (window.location.search.includes('confirmado=1')) {
+  const params = new URLSearchParams(window.location.search);
+    if(params.get('confirmado') === '1') {
     // Cria a mensagem personalizada
     const div = document.createElement('div');
     div.innerHTML = "🎉 Sua presença foi confirmada com sucesso! Te esperamos lá. 🎉";
@@ -294,7 +295,7 @@
   <p>Confirme sua presença no nosso casamento. Ficaremos felizes com sua companhia!</p>
   <form action="https://formsubmit.co/nathalyaito@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="Confirmação de presença">
-    <input type="hidden" name="_next" value="https://nathyshimomura.github.io/NathalyaGuilherme/index">
+    <value="https://nathyshimomura.github.io/NathalyaGuilherme/?Confirmado=1">
     <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
     <input type="email" name="email" placeholder="Seu e-mail" required autocomplete="email">
     <input type="number" name="quantidade" placeholder="Quantas pessoas?" required autocomplete="off" min="1">
@@ -367,6 +368,7 @@
 
 </body>
 </html>
+
 
 
 
