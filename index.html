@@ -203,6 +203,49 @@
     }
   </style>
 </head>
+
+<script>
+document.getElementById('btn-copiar').addEventListener('click', function() {
+  const chavePix = '60a3201b-85cb-4153-a724-f8b029934153';
+  navigator.clipboard.writeText(chavePix).then(function() {
+    document.getElementById('copiado-msg').style.display = 'inline';
+    setTimeout(function(){
+      document.getElementById('copiado-msg').style.display = 'none';
+    }, 1700);
+  });
+});
+</script>
+
+<script>
+  // Checa se veio do formulário de confirmação
+  if (window.location.search.includes('confirmado=1')) {
+    // Cria a mensagem personalizada
+    const div = document.createElement('div');
+    div.innerHTML = "🎉 Sua presença foi confirmada com sucesso! Te esperamos lá. 🎉";
+    div.style = `
+      background: #fff0f5;
+      color: #b06b77;
+      font-size: 1.1rem;
+      border: 2px solid #b06b77;
+      padding: 1rem;
+      border-radius: 10px;
+      margin: 1.5rem auto;
+      max-width: 420px;
+      text-align: center;
+      z-index: 200;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+    `;
+    document.body.insertBefore(div, document.body.firstChild);
+
+    // Remove o parâmetro da URL depois de alguns segundos, e recarrega a página
+    setTimeout(function(){
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }, 7000);
+  }
+</script>
+
+
+
 <body>
   
 <div id="Inicio"></div>
@@ -262,7 +305,7 @@
   <p>Confirme sua presença no nosso casamento. Ficaremos felizes com sua companhia!</p>
   <form action="https://formsubmit.co/nathalyaito@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="Confirmação de presença">
-    <input type="hidden" name="_next" value="https://nathyshimomura.github.io/index.html">
+    <input type="hidden" name="_next" value="https://nathyshimomura.github.io/index.html?confirmado=1">
     <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
     <input type="email" name="email" placeholder="Seu e-mail" required autocomplete="email">
     <input type="number" name="quantidade" placeholder="Quantas pessoas?" required autocomplete="off" min="1">
@@ -279,7 +322,7 @@
     Mas se quiser nos presentear com mais, envie uma mensagem carinhosa e, ao final, você podera nos presentear com um pix.
     
   </p>
-  <form id="pixForm" action="https://formsubmit.co/nathalyaito@gmail.com.com" method="POST">
+  <form id="pixForm" action="https://formsubmit.co/nathalyaito@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="Mensagem de presente via Pix">
     <input type="text" name="nome" placeholder="Seu nome" required autocomplete="name">
     <textarea name="mensagem" placeholder="Escreva sua mensagem aos noivos 💌" required autocomplete="off"></textarea>
@@ -293,10 +336,18 @@
     <button onclick="fecharModal()" style="position:absolute; top:8px; right:15px; font-size:1.4rem; background:none; border:none; color:#b06b77; cursor:pointer;">×</button>
     <h3>Obrigado pela mensagem! 💖</h3>
     <p>Agora é só escanear o QR Code abaixo para fazer seu Pix:</p>
-    <img src="Fotos/qrcode_pix.png" alt="QR Code do Pix dos noivos" style="width:180px; margin:1rem auto;">
-    <p><strong>Chave Pix:</strong> seuemail@exemplo.com</p>
+    <img src="Fotos/pixGui" alt="QR Code do Pix dos noivos" style="width:180px; margin:1rem auto;">
+    <p>
+    <strong>Chave Pix:</strong> 60a3201b-85cb-4153-a724-f8b029934153
+    <button id="btn-copiar" style="
+    background: none; border: none; cursor: pointer;
+    font-size: 1.2rem; vertical-align: middle; margin-left: 10px; color:#b06b77;
+    " title="Copiar chave Pix">📋</button>
+    <span id="copiado-msg" style="font-size:0.95rem; color:#44b06b; margin-left:8px; display:none;">Copiado!</span>
+    </p>
+
     <p style="font-size:0.9rem; color:#888;">Se quiser, copie sua mensagem para o campo "mensagem" do Pix no app do banco.</p>
-    <button onclick="enviarFormulario()" style="margin-top:1.5rem; background:#b06b77; color:#fff; border:none; border-radius:6px; padding:0.7rem 1.5rem; font-size:1rem; cursor:pointer;">Finalizar</button>
+    <button onclick="enviarFormulario()" style="margin-top:1.5rem; background:#b06b77; color:#fff; border:none; border-radius:6px; padding:0.7rem 1.5rem; font-size:1rem; cursor:pointer;">Voltar para o início</button>
   </div>
 </div>
 
@@ -317,10 +368,14 @@
 
   // Botão "Finalizar" envia o formulário de verdade
   function enviarFormulario() {
-    formularioEnviado = true;
-    document.getElementById('pixForm').submit();
-  }
-</script>
+  formularioEnviado = true;
+  document.getElementById('pixForm').submit();
+    // Depois de enviar, redireciona e força o reload da página
+  window.location.href = 'index.html';
+  window.location.reload(true);
+}
+
+
 
 
 
@@ -330,4 +385,5 @@
 
 </body>
 </html>
+
 
